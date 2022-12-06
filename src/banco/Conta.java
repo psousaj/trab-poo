@@ -9,8 +9,7 @@ public class Conta {
 
 	public Conta() {
 		int n =(int) (Math.random() * 10000 + 1);
-		String numConta = "c"+n;
-		this.numero = numConta;
+		this.numero = "c"+n;
 	}
 
 	public Conta(Pessoa cliente) {
