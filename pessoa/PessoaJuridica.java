@@ -10,7 +10,13 @@ public class PessoaJuridica extends Pessoa{
 	}
 
 	public String getCnpj() {
-		return cnpj;
+		StringBuilder sb = new StringBuilder(cnpj);
+		sb.insert(2, ".");
+		sb.insert(6, ".");
+		sb.insert(10, "/");
+		sb.insert(15, "-");
+
+		return sb.toString();
 	}
 
 	public void setCnpj(String cnpj) {
@@ -27,8 +33,11 @@ public class PessoaJuridica extends Pessoa{
 	
 	@Override
 	public String toString() {
-		return super.fullName()
-				+"CPNJ: "+getCnpj()
-				+"Razão Social: "+getRazaoSocial();
+		StringBuilder sb = new StringBuilder("\n-------------------------------\n");
+			sb.append(super.fullName());
+			sb.append("\nCPNJ: "+getCnpj());
+			sb.append("\nRazao Social: "+getRazaoSocial());
+
+		return super.toString()+(sb.toString());
 	}
 }

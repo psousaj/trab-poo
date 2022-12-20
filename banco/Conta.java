@@ -33,7 +33,7 @@ public class Conta {
 	
 	@Override
 	public String toString() {
-		return "\n"+ mostra();
+		return "\n"+ mostra()+"\n";
 	}
 
 	public void creditar(double valor) {
